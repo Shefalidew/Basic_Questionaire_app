@@ -1,16 +1,28 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; 
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-   MyApp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+@override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    //throw UnimplementedError();
+    return _MyAppState();
+  }
+}
 
+class _MyAppState extends State<MyApp>{
+   //MyApp({Key? key}) : super(key: key);
+   @override
+  // ignore: use_function_type_syntax_for_parameters
+  
+  
   var questionIndex = 0;
 
   void answerQuestion() {
-    questionIndex = questionIndex+1;
+    setState((){questionIndex = questionIndex+1;});
     print(questionIndex);
   }
 
