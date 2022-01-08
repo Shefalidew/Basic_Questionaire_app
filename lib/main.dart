@@ -5,10 +5,13 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+   MyApp({Key? key}) : super(key: key);
+
+  var questionIndex = 0;
 
   void answerQuestion() {
-    print('Answer chosen!');
+    questionIndex = questionIndex+1;
+    print(questionIndex);
   }
 
   @override
@@ -28,7 +31,7 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: <Widget>[
             Center(
-              child: Text(questions.elementAt(0)),
+              child: Text(questions[questionIndex]),
             ),
             RaisedButton(child: Text('Answer 1'), onPressed: answerQuestion),
             RaisedButton(
