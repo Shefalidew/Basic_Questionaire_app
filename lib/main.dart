@@ -16,14 +16,14 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp>{
    //MyApp({Key? key}) : super(key: key);
    @override
-  // ignore: use_function_type_syntax_for_parameters
   
   
-  var questionIndex = 0;
+  
+  var _questionIndex = 0;
 
-  void answerQuestion() {
-    setState((){questionIndex = questionIndex+1;});
-    print(questionIndex);
+  void _answerQuestion() {
+    setState((){_questionIndex = _questionIndex+1;});
+    print(_questionIndex);
   }
 
   @override
@@ -43,9 +43,9 @@ class _MyAppState extends State<MyApp>{
         body: Column(
           children: <Widget>[
             Center(
-              child: Text(questions[questionIndex]),
+              child: Text(questions[_questionIndex]),
             ),
-            RaisedButton(child: Text('Answer 1'), onPressed: answerQuestion),
+            RaisedButton(child: Text('Answer 1'), onPressed: _answerQuestion),
             RaisedButton(
                 child: Text('Answer 2'),
                 onPressed: () => print('Answer 2 chosen!')),
