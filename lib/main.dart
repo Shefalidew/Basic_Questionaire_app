@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart';
+import './question.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
-@override
+  @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
     //throw UnimplementedError();
@@ -13,16 +14,15 @@ class MyApp extends StatefulWidget {
   }
 }
 
-class _MyAppState extends State<MyApp>{
-   //MyApp({Key? key}) : super(key: key);
-   @override
-  
-  
-  
+class _MyAppState extends State<MyApp> {
+  //MyApp({Key? key}) : super(key: key);
+  @override
   var _questionIndex = 0;
 
   void _answerQuestion() {
-    setState((){_questionIndex = _questionIndex+1;});
+    setState(() {
+      _questionIndex = _questionIndex + 1;
+    });
     print(_questionIndex);
   }
 
@@ -33,6 +33,7 @@ class _MyAppState extends State<MyApp>{
       'What\s your favourite animal?'
     ]; //list of questions
     // TODO: implement build
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -42,9 +43,7 @@ class _MyAppState extends State<MyApp>{
         ),
         body: Column(
           children: <Widget>[
-            Center(
-              child: Text(questions[_questionIndex]),
-            ),
+            Question(questions[_questionIndex]),
             RaisedButton(child: Text('Answer 1'), onPressed: _answerQuestion),
             RaisedButton(
                 child: Text('Answer 2'),
